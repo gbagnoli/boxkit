@@ -1,0 +1,14 @@
+FROM docker.io/library/ubuntu:25.04
+
+LABEL com.github.containers.toolbox="true" \
+      usage="This image is meant to be used with the toolbox or distrobox command" \
+      summary="Builds personal distrobox image" \
+      maintainer="gbagnoli@gmail.com"
+
+# Copy the setup scripts and package list
+COPY ../scripts/ubuntu-bootstrap.sh /
+COPY ../scripts/distrobox-shims.sh /
+
+# Run the setup scripts
+RUN chmod +x ubuntu-bootstrap.sh distrobox-shims.sh && /ubuntu-bootstrap.sh
+RUN rm /ubuntu-bootstrap.sh /distrobox-shims.sh
