@@ -1,8 +1,0 @@
-brew "fzf"
-brew "gcc"
-brew "go"
-brew "rbenv"
-brew "rbenv-bundler"
-brew "shellcheck"
-brew "uv"
-brew "zoxide"

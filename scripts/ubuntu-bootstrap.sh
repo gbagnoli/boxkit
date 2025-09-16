@@ -20,6 +20,3 @@ apt_get autoremove
 apt_get autoclean
 
 apt_get install lsb-release git exiftool gpsbabel python3-tz rename buildah curl build-essential
-export PATH="$PATH:/home/linuxbrew/.linuxbrew/bin"
-NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-brew bundle install --file Brewfile
