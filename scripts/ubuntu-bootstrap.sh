@@ -19,6 +19,6 @@ apt_get full-upgrade
 apt_get autoremove
 apt_get autoclean
 
-apt_get install lsb-release git exiftool gpsbabel python3-tz rename buildah curl build-essential software-properties-common
+apt_get install lsb-release git exiftool gpsbabel python3-tz rename buildah curl build-essential software-properties-common libglib2.0-dev pkg-config
 add-apt-repository ppa:jgmath2000/et
 apt_get install et
