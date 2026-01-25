@@ -1,5 +1,7 @@
 # boxkit
 
+[![build-boxkit](https://github.com/gbagnoli/boxkit/actions/workflows/build-boxkit.yml/badge.svg)](https://github.com/gbagnoli/boxkit/actions/workflows/build-boxkit.yml)
+
 ## What is boxkit ?
 
 boxkit is a set of GitHub actions and skeleton files to build custom toolbox and distrobox images. Basically, clone this repo, make any changes you need, and then generate your custom images.
@@ -46,8 +48,8 @@ jobs:
       - [your_custom_image_2]
 ```
 
-**Note:** 
-- You can choose to only generate a single custom image if you want. 
+**Note:**
+- You can choose to only generate a single custom image if you want.
 - You can remove the boxkit and fedora-example images provided in the boxkit repo and only generate your own custom images.
 - The `scripts/` and `packages/` folders are optional, you can generate your custom images without them, but they are highly recommended to use.
 - The name of your custom image and ContainerFile **MUST** be the same. <br>
@@ -92,7 +94,7 @@ If you use distrobox:
 
     distrobox create -i ghcr.io/ublue-os/boxkit -n boxkit
     distrobox enter boxkit
-    
+
 If you use toolbox:
 
     toolbox create -i ghcr.io/ublue-os/boxkit -c boxkit
@@ -100,7 +102,7 @@ If you use toolbox:
 
 **NOTE:**
 - You can use `chezmoi` to pull down your dotfiles and set up git sync.
-- It is recommended to use the [Ptyxis](https://flathub.org/apps/app.devsuite.Ptyxis) terminal, which provides seamless integration with various podman/distrobox/toolbx containers. 
+- It is recommended to use the [Ptyxis](https://flathub.org/apps/app.devsuite.Ptyxis) terminal, which provides seamless integration with various podman/distrobox/toolbx containers.
 
 ## Custom images built with boxkit
 
@@ -115,7 +117,7 @@ Here is a list of some awesome custom images built using boxkit.
 These images are signed with sisgstore's [cosign](https://docs.sigstore.dev/quickstart/quickstart-cosign/). You can verify the signature by downloading the `cosign.pub` key from this repo and running the following command:
 
     cosign verify --key cosign.pub ghcr.io/ublue-os/boxkit
-    
+
 If you're forking this repo you should [read the docs](https://docs.github.com/en/actions/security-guides/encrypted-secrets) on keeping secrets in github. You need to [generate a new keypair](https://docs.sigstore.dev/cosign/key_management/signing_with_self-managed_keys/) with cosign. The public key can be in your public repo (your users need it to check the signatures), and you can paste the private key in Settings -> Secrets -> Actions.
 
 ![Alt](https://repobeats.axiom.co/api/embed/7c5f037d792c6deb1946e5bc040f64a0fc8abeab.svg "Repobeats analytics image")
