@@ -1,4 +1,4 @@
-FROM docker.io/library/ubuntu:25.10
+FROM docker.io/library/ubuntu:26.04
 
 LABEL com.github.containers.toolbox="true" \
       usage="This image is meant to be used with the toolbox or distrobox command" \
