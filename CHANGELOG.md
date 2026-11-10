@@ -1,5 +1,17 @@
 # Changelog
 
+## 1.0.0 (2026-11-10)
+
+
+### Features
+
+* upgrade Ubuntu base image to 26.04 ([9bfd05b](https://github.com/gbagnoli/boxkit/commit/9bfd05bb30ba43c5948c6f784990daf9f9ee068b))
+
+
+### Bug Fixes
+
+* grant release-please required workflow permissions ([c483e81](https://github.com/gbagnoli/boxkit/commit/c483e81fb62969ecfaa74f25ad1e8dcb716cb405))
+
 ## [1.2.0](https://github.com/ublue-os/boxkit/compare/v1.1.0...v1.2.0) (2025-01-04)
 
 
