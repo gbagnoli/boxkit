@@ -12,5 +12,17 @@ jobs:
       pull-requests: write
     steps:
       - uses: googleapis/release-please-action@16a9c90856f42705d54a6fda1823352bdc62cf38 # v4
+        id: release
         with:
           release-type: simple
+      - name: Auto-merge release pull requests
+        if: steps.release.outputs.prs_created == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_REPO: ${{ github.repository }}
+          RELEASE_PRS: ${{ steps.release.outputs.prs }}
+        run: |
+          set -euo pipefail
+          while read -r pr_number; do
+            gh pr merge "$pr_number" --auto --squash
+          done < <(jq -r '.[].number' <<< "$RELEASE_PRS")

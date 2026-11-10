@@ -4,6 +4,8 @@ on:
   pull_request:
     branches:
       - main
+    paths-ignore: # don't rebuild on documentation change
+      - '**.md'
   push:
     branches:
       - main
